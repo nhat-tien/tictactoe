@@ -1,8 +1,14 @@
 <script setup>
+import { useGameStateStore } from '@/stores/gameState';
+
 const props = defineProps(['value','row','col']);
+const gameState = useGameStateStore();
+
 
 const handleMove = () => {
-  console.log(props.row, props.col);
+	if (gameState.turn === gameState.player) {
+	  gameState.move([props.row, props.col])
+	}	
 }
 
 </script>

@@ -1,19 +1,25 @@
 <script setup>
 import generateId from '@/helpers/generateId';
 import { useGameStateStore } from '@/stores/gameState';
-import { watch } from 'vue';
+import { watchEffect } from 'vue';
+import { useRouter } from 'vue-router';
 
 const gameState = useGameStateStore();
+const router = useRouter();
 
 const setRandomRoomId = () => {
 	let randomRoomId = generateId(5);
 	gameState.setRoomId(randomRoomId);
 }
 
-watch
+watchEffect(() => {
+	if(gameState.ready) {
+		router.push({ name: "play"});
+	}
+})
 
 const joinRoom = () => {
-  gameState.joinRoom(roomId.value)
+  gameState.joinRoom(gameState.roomId);
 }
 
 </script>

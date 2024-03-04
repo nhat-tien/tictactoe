@@ -7,11 +7,21 @@ const gameState = useGameStateStore();
 </script>
 
 <template>
-	<table>
-		<tr v-for="(rowLine, indexRow ) in gameState.board">
-			<td v-for="(cell, indexCol) in rowLine">
-				<Square :value="cell" :row="indexRow" :col="indexCol"/>
-      </td>
-		</tr>
-	</table>
+	<div v-if="!gameState.isEnd">
+		<h2>Bạn là {{ gameState.player }}</h2>
+		<h3>Lượt của: {{ gameState.turn }}</h3>
+		<table>
+			<tr v-for="(rowLine, indexRow ) in gameState.board">
+				<td v-for="(cell, indexCol) in rowLine">
+					<Square :value="cell" :row="indexRow" :col="indexCol"/>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div v-else-if="gameState.winner === gameState.player">
+    <h2>Bạn đã thắng</h2>
+	</div>
+	<div v-else>
+		<h2>Bạn đã thua</h2>
+	</div>
 </template>

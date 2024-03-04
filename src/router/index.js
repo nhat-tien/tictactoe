@@ -31,7 +31,7 @@ const router = createRouter({
       component: RoomView 
 		},
 		{
-			path: '/play',
+			path: '/room/play',
       name: 'play',
       component: GameView
 		}
