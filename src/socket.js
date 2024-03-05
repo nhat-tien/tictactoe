@@ -6,8 +6,8 @@ import { io } from "socket.io-client";
 // 	barEvents: [],
 // });
 
-const URL  = process.env.NODE_ENV === "production" ? undefined : "http://localhost:5000"
-
+const URL  = import.meta.env.VITE_API_STAGE === "production" ? import.meta.env.VITE_API_SERVER_URL : "http://localhost:5000"
+console.log(URL)
 export const socket = io(URL)
 
 // socket.on("connect", () => {

@@ -3,6 +3,7 @@ import { socket } from "@/socket";
 
 export const useGameStateStore = defineStore("gameState", {
   state: () => ({
+		isConnected: false,
 		roomId: "",
 		ready: false,
 		isEnd: false,
@@ -18,6 +19,13 @@ export const useGameStateStore = defineStore("gameState", {
 
   actions: {
     bindEvents() {
+      socket.on("connect", () => {
+				this.isConnected = true;
+			})
+
+      socket.on("disconnect", () => {
+				this.isConnected = false;
+			})
 
       socket.on("ready", ({ready}) => {
         this.ready = ready; 
@@ -52,6 +60,20 @@ export const useGameStateStore = defineStore("gameState", {
 		*/
 		move(moveLocation) {
 			socket.emit("move", {roomId: this.roomId, board: this.board, move: moveLocation, player: this.player})
+		},
+
+		reset() {
+			socket.emit("leave_room", {roomId: this.roomId})
+      this.ready = false;
+			this.roomId = "";
+			this.isEnd = false;
+			this.winner = null;
+			this.board = [
+				[null, null, null],
+				[null, null, null],
+				[null, null, null],
+			];
+			this.player = "";
 		},
 
 	},

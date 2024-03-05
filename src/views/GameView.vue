@@ -1,5 +1,6 @@
 <script setup>
 import Square from '@/components/Square.vue';
+import BackButton from '@/components/BackButton.vue';
 import { useGameStateStore } from '@/stores/gameState'; 
 
 const gameState = useGameStateStore();
@@ -18,10 +19,16 @@ const gameState = useGameStateStore();
 			</tr>
 		</table>
 	</div>
+	<div v-else-if="gameState.winner === null">
+		<h2>Hòa</h2>
+		<BackButton />
+	</div>
 	<div v-else-if="gameState.winner === gameState.player">
     <h2>Bạn đã thắng</h2>
+		<BackButton />
 	</div>
 	<div v-else>
 		<h2>Bạn đã thua</h2>
+		<BackButton />
 	</div>
 </template>

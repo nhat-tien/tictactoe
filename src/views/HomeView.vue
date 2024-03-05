@@ -5,6 +5,6 @@ import { RouterLink } from 'vue-router';
 <template>
   <main>
 		<h1>Welcome to Tictactoe War</h1>
-		<RouterLink to="/choose-mode-game">Started !</RouterLink>
+		<RouterLink to="/room">Started !</RouterLink>
   </main>
 </template>
