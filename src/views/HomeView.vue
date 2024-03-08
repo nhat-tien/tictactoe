@@ -1,10 +1,23 @@
 <script setup>
 import { RouterLink } from 'vue-router';
+import PrimaryButton from '@/components/PrimaryButton.vue';
+
 </script>
 
 <template>
-  <main>
-		<h1>Welcome to Tictactoe War</h1>
-		<RouterLink to="/room">Started !</RouterLink>
-  </main>
+		<img class="heading" src="/heading.png" />
+		<RouterLink to="/room" >
+			<PrimaryButton>
+				Play
+			</PrimaryButton>
+		</RouterLink>
 </template>
+
+<style scoped>
+
+	.heading {
+		width: 60%;
+		min-width: 350px;
+	}
+
+</style>

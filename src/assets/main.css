@@ -1,4 +1,51 @@
-@import './base.css';
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+	padding: 0;
+  font-weight: normal;
+}
+
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('@/assets/fonts/Montserrat-Regular.ttf');
+  font-weight: 500;
+  /* font-display: swap; */
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('@/assets/fonts/Inter-Regular.ttf');
+  font-weight: 500;
+  /* font-display: swap; */
+}
+
+
+html {
+	font-size: 16px;
+}
+
+body {
+	min-height: 100vh;
+	width: 100%;
+	background-image: url("/background.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	font-family: 'Inter';
+	overflow: hidden;
+}
+
+/* #app { */
+/* 	display: grid; */
+/* 	place-items: center; */
+/* 	height: 100vh; */
+/* 	width: 100vw; */
+/* } */
+/*
 
 #app {
   max-width: 1280px;
@@ -33,3 +80,4 @@ a,
     padding: 0 2rem;
   }
 }
+*/

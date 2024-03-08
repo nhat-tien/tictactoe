@@ -19,11 +19,23 @@ const handleMove = () => {
 </template>
 <style scoped>
 .square {
-	border: 1px solid black;
-	width: 20px;
-	height: 20px;
+	/* border: 1px solid black; */
+	font-size: 5rem;
+	width: 100%;
+	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	color: #fff;
+  text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #0fa,
+      0 0 82px #0fa,
+      0 0 92px #0fa,
+      0 0 102px #0fa,
+      0 0 151px #0fa;
+
 }
 </style>

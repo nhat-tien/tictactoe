@@ -32,3 +32,28 @@ const gameState = useGameStateStore();
 		<BackButton />
 	</div>
 </template>
+
+<style scoped>
+table {
+	width: 300px;
+	height: 300px;
+	/* border: 2px solid #fff; */
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr;
+}
+
+tr {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+}
+
+tr:not(:last-of-type) {
+	border-bottom: 0.2rem solid #fff;
+}
+
+td:not(:last-of-type) {
+	border-right: 0.2rem solid #fff;
+}
+
+</style>
