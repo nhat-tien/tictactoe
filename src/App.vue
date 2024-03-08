@@ -1,13 +1,5 @@
 <script setup>
-import { socket } from './socket';
-import { useGameStateStore } from './stores/gameState';
 import { RouterView } from 'vue-router';
-
-const gameState = useGameStateStore();
-
-socket.off();
-
-gameState.bindEvents();
 
 </script>
 

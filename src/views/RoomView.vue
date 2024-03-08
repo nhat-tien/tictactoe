@@ -1,4 +1,5 @@
 <script setup>
+import { socket } from './socket';
 import generateId from '@/helpers/generateId';
 import { useGameStateStore } from '@/stores/gameState';
 import { watchEffect, ref } from 'vue';
@@ -9,6 +10,10 @@ import PrimaryButton from '@/components/PrimaryButton.vue';
 const isWaiting = ref(false)
 const gameState = useGameStateStore();
 const router = useRouter();
+
+socket.off();
+
+gameState.bindEvents();
 
 watchEffect(() => {
 	if(gameState.ready) {
