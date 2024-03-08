@@ -5,7 +5,7 @@ import PrimaryButton from '@/components/PrimaryButton.vue';
 </script>
 
 <template>
-		<img class="heading" src="/heading.png" />
+		<img class="heading" src="/heading.webp" />
 		<RouterLink to="/room" >
 			<PrimaryButton>
 				Play
