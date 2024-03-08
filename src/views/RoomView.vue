@@ -1,5 +1,5 @@
 <script setup>
-import { socket } from './socket';
+import { socket } from '../socket';
 import generateId from '@/helpers/generateId';
 import { useGameStateStore } from '@/stores/gameState';
 import { watchEffect, ref } from 'vue';
