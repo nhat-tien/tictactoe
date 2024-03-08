@@ -9,8 +9,10 @@ const gameState = useGameStateStore();
 
 <template>
 	<div v-if="!gameState.isEnd">
-		<h2>Bạn là {{ gameState.player }}</h2>
-		<h3>Lượt của: {{ gameState.turn }}</h3>
+		<div class="status-bar">
+			<h2>Bạn là {{ gameState.player }}</h2>
+			<h3>Lượt của: {{ gameState.turn }}</h3>
+    </div>
 		<table>
 			<tr v-for="(rowLine, indexRow ) in gameState.board">
 				<td v-for="(cell, indexCol) in rowLine">
@@ -54,6 +56,10 @@ tr:not(:last-of-type) {
 
 td:not(:last-of-type) {
 	border-right: 0.2rem solid #fff;
+}
+
+.status-bar {
+	color: #fff;
 }
 
 </style>
