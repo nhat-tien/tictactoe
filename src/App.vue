@@ -7,10 +7,10 @@ import { RouterView } from 'vue-router';
 	<main class="main">
 		<RouterView />
 	</main>
-  <img class="img-decorate img-ufo" src="/ufo.webp" />
-	<img class="img-decorate img-planet-1" src="/planet-1.webp" />
-	<img class="img-decorate img-planet-2" src="/planet-2.webp" />
-	<img class="img-decorate img-planet-3" src="/planet-3.webp" />
+ <!--  <img class="img-decorate img-ufo" src="/ufo.webp" /> -->
+	<!-- <img class="img-decorate img-planet-1" src="/planet-1.webp" /> -->
+	<!-- <img class="img-decorate img-planet-2" src="/planet-2.webp" /> -->
+	<!-- <img class="img-decorate img-planet-3" src="/planet-3.webp" /> -->
 </template>
 
 <style scoped>
